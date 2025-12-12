@@ -11,10 +11,10 @@ const SearchTask = ({searchTask}:SearchTaskProps) => {
         searchTask(searchParams)
     }
     return (
-        <div>
-            <form onSubmit={handleSearch}>
-                <input type="text" placeholder='Search Task' value={searchParams.join(' ')} onChange={e =>{setSearchParams(e.target.value.split(' '))}}  />
-                <button>Search</button>
+        <div className='search__task--container'>
+            <form className='search__task--form' onSubmit={handleSearch}>
+                <input type="text"  className='search__task--input' placeholder='Search Task' value={searchParams.join(' ')} onChange={e =>{setSearchParams(e.target.value.split(' '))}}  />
+                <button className='search__task'>Search</button>
             </form>
         </div>
     );

@@ -36,7 +36,7 @@ const FilterBar = ({tasks , onChange}: TaskFilterProps) => {
       
     return (
         <div className="filter__bar--container">
-            <div>
+            <div className="filter__bar">
                 <div className="filter--container">
                     <label className="filter__bar--label">Status</label>
                     
@@ -58,9 +58,9 @@ const FilterBar = ({tasks , onChange}: TaskFilterProps) => {
                     </select>
                 </div>
             </div>
-            <div>
-                <div>Notifications</div>
-                <div>
+            <div className="filter__bar">
+                <div className="filter__bar--notification"></div>
+                <div className="filter--container">
                     <label className="filter__bar--label">Sort</label>
                 
                     <select className="curr--dropdown" id="current-sort" defaultValue={" "} onChange={(e) => setSortOrder(e.target.value)}>

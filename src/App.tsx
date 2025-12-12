@@ -42,6 +42,7 @@ const App = () => {
     setTaskList(prev => [...prev, newTask]);
     setTasksnum(prev => prev + 1)
 
+
   };
 
   const searchTask = (searchParams: string[]) => {
@@ -51,10 +52,8 @@ const App = () => {
           task.description.toLowerCase().includes(param.toLowerCase())
         )
       })
-   console.log(searchParams)
-   console.log(matches)
-
-
+      setTaskList(matches);
+  
 
   };
   
@@ -68,16 +67,19 @@ const App = () => {
     
   },[tasksnum , taskList ,originalTasks ])
   return (
-    <div>
-      <AddSearchBar taskId={tasksnum} addTask={addTask}  searchTask={searchTask}/>
-      <FilterBar tasks={originalTasks} onChange={filterTasks}/>
-      <TaskList 
-        tasks = {taskList} 
-        onStatusChange={updateTaskStatus} 
-        onDelete={deleteTask} 
-        onEdit={editTask} 
-        />
-      
+    <div className='container'>
+      <div className="row">
+        <div className="title__container"><h1>SBA - Task by Rice</h1></div>
+        <AddSearchBar taskId={tasksnum} addTask={addTask}  searchTask={searchTask}/>
+        <FilterBar tasks={originalTasks} onChange={filterTasks}/>
+        <TaskList 
+          tasks = {taskList} 
+          onStatusChange={updateTaskStatus} 
+          onDelete={deleteTask} 
+          onEdit={editTask} 
+          />
+        
+      </div>
     </div>
   );
 }

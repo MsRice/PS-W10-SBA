@@ -5,8 +5,7 @@ import type { AddSearchProps } from '../../types';
 
 const AddSearchBar = ({taskId , addTask , searchTask}: AddSearchProps) => {
     return (
-        <div>
-            <h1>AddSearchBar</h1>
+        <div className='add-search__bar--wrapper'>
             <AddTask taskId={taskId} addTask={addTask}/>
             <SearchTask searchTask={searchTask}/>
         </div>
