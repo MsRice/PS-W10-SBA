@@ -1,4 +1,27 @@
-# React + TypeScript + Vite
+## Table of contents
+
+- [Overview](#overview)
+  - [Scenario](#scenario)
+-[Built with](#built-with)
+  - [React + Typescript + Vite](#react-typescript-vite)
+  - [React Compiler](#react-compiler)
+  - [Expanding the ESLint configuration](#expanding-the-eSLint-configuration)
+- [Reflection](#reflection)
+- [Author](#author)
+
+
+## Overview
+
+SBA - React Dashboard Application
+
+### Scenario
+
+In this assessment, you will apply the skills you have developed throughout your React training to build a functional, real-world dashboard application. This project will test your understanding of React components, state management, TypeScript integration, form handling, and component composition.
+
+You will create a Task Management Dashboard using React and TypeScript. The final deliverable will include a GitHub repository with your project and a written reflection on your approach and the challenges you faced.
+
+## Built with
+# React TypeScript Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
@@ -71,3 +94,14 @@ export default defineConfig([
   },
 ])
 ```
+
+## Reflection
+
+ Due to time constraints, I wasn’t able to implement every feature I originally envisioned for this project. The primary focus was completing the core requirements while ensuring stability and clarity in the design. Even so, the project establishes a strong foundation and clearly demonstrates my technical skills and problem-solving approach. I genuinely believe this could become a really cool and impactful project with additional time and iteration. After grading, I plan to revisit the codebase, improve the user experience, add missing features, and refine the overall architecture so it can evolve into a polished, portfolio-ready piece.
+
+
+## Author
+
+Patrice(Rice 🍚) Maxwell 
+([thegrainofrice.com](https://www.thegrainofrice.com/))
+([Linkedin](https://www.linkedin.com/in/patrice-maxwell))
