@@ -9,7 +9,9 @@ const App = () => {
   const [taskList , setTaskList] = useState(tasks)
   const [originalTasks, setOriginalTasks] = useState<Task[]>(tasks);
   const [tasksnum, setTasksnum] = useState(21);
-  
+  const [dragIndex ,setDragIndex] = useState<number | null>(0)
+
+ 
 
   const filterTasks = (filtered: Task[]) => {
         console.log('filtered' , filtered)
@@ -63,6 +65,24 @@ const App = () => {
     setTaskList(prev => prev.map(t => t.id == updatedtask.id ? updatedtask : t));
   }
   
+     const handleDragStart = (index:number) =>{
+        setDragIndex(index)
+    }
+
+    const handleDragOver = (e: React.DragEvent<HTMLDivElement>) =>{
+        e.preventDefault()
+    }
+
+    const handleDrop = (index:number) => {
+       if (dragIndex === null || dragIndex === index) return;
+        const newTasks = [...tasks]
+        const draggedTask = newTasks[dragIndex]
+        newTasks.splice(dragIndex , 1)
+        newTasks.splice(index , 0, draggedTask)
+        setTaskList(newTasks)
+        setDragIndex(null)
+    }
+
   useEffect(()=>{
     
   },[tasksnum , taskList ,originalTasks ])
@@ -77,6 +97,9 @@ const App = () => {
           onStatusChange={updateTaskStatus} 
           onDelete={deleteTask} 
           onEdit={editTask} 
+          onDragStart = {handleDragStart}
+          onDragOver = {handleDragOver}
+          onDrop = {handleDrop}
           />
         
       </div>

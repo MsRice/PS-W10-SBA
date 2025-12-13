@@ -34,10 +34,10 @@ addTask(newTask)
                 
 
                     <label htmlFor="task-title">Task Title:</label>
-                    <input type="text" id='task-title' value={title}  onChange={e =>setTitle(e.target.value)}/>
+                    <input type="text" id='task-title' value={title}  onChange={e =>setTitle(e.target.value)} required/>
 
                     <label htmlFor="task-description">Description:</label>
-                    <textarea id='task-description' value={description}  onChange={e =>setDescription(e.target.value)}/>
+                    <textarea id='task-description' value={description}  onChange={e =>setDescription(e.target.value)} required/>
 
                     <label htmlFor="task-status">Status:</label>
                     <select  id='task-status' value={status} onChange={e =>setStatus(e.target.value as TaskStatus)}>

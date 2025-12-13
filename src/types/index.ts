@@ -9,17 +9,28 @@ export interface Task {
   dueDate: string;
 }
 
+// TaskList
+
 export interface TaskListProps {
   tasks: Task[];
   onStatusChange: (taskId: string, newStatus: TaskStatus) => void;
   onDelete: (taskId: string) => void;
   onEdit: (task: Task) => void;
+  onDragStart: (index: number) => void;
+  onDragOver: (e: React.DragEvent<HTMLDivElement>) => void;
+  onDrop :(index: number) => void;
+  
 }
+
 export interface TaskProps {
   task: Task;
+  index:number;
   onStatusChange: (taskId: string, newStatus: TaskStatus) => void;
   onDelete: (taskId: string) => void;
   onEdit: (task: Task) => void;
+  onDragStart: (index: number) => void;
+  onDragOver: (e: React.DragEvent<HTMLDivElement>) => void;
+  onDrop :(index: number) => void;
  
 }
 
