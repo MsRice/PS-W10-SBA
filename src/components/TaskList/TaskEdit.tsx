@@ -1,5 +1,6 @@
 
 import type { TaskEditProps } from '../../types'
+import { FaPencil } from "react-icons/fa6";
 
 const TaskEdit = ({onIsEdit}:TaskEditProps) => {
         
@@ -12,7 +13,7 @@ const TaskEdit = ({onIsEdit}:TaskEditProps) => {
 
     return (
         <div>
-             <button className="edit-btn" onClick={handleEditForm}>Edit</button> 
+             <FaPencil className="edit-btn" onClick={handleEditForm} /> 
         
         </div>
     );

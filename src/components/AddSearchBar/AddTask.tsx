@@ -22,6 +22,7 @@ const newTask = {
     id : `task-${taskId}`, title ,description ,status ,priority, dueDate
 }
 
+toggleTaskModal()
 
 addTask(newTask)
 

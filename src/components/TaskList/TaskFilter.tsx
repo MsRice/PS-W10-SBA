@@ -13,7 +13,7 @@ const TaskFilter = ({task , onStatusChange}:TaskItemProps) => {
 
     return (
         <>
-        <select className="curr--dropdown" id={`${task?.id}-status`} defaultValue={task.status} onChange={handleStatusChange} >
+        <select className="task--dropdown" id={`${task?.id}-status`} defaultValue={task.status} onChange={handleStatusChange} >
             <option value="pending">Pending</option>
             <option value="in-progress">In Progress</option>
             <option value="completed">Completed</option>

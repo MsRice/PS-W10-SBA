@@ -6,6 +6,7 @@ import { useState } from 'react';
 import SubmitEdit from './SubmitEdit';
 import { CgArrowsBreakeV } from "react-icons/cg";
 
+
 const TaskItem = ({task ,index, onStatusChange , onDelete , onEdit ,onDragStart , onDragOver ,onDrop}:TaskProps) => {
 
     const [isEdit ,setIsEdit] = useState(false)
@@ -52,15 +53,17 @@ const TaskItem = ({task ,index, onStatusChange , onDelete , onEdit ,onDragStart 
                             onDrop={() => onDrop(index)}
                             draggable>
                             <div className="task--info">
-                                <div className="task-title">{task.title} <span className="greyed sm">#{task.id}</span></div>
+                                <div className="task-title">{task.title} <span className="greyed-sm">#{task.id}</span></div>
                                 <div className="task-desc">{task.description}</div>
                                 <div className={`task-priority ${task.priority}-priority`}>Priority: {task.priority} <span className="greyed">Due Date: {task.dueDate}</span></div>
                 
                             </div>
                             <div className="task--buttons">
                                 <TaskFilter task={task} onStatusChange={(newStatus) => onStatusChange(task.id, newStatus)} />
-                                <TaskDelete task={task} onDelete={onDelete}/>
-                                <TaskEdit onIsEdit={editTaskOpen}/>
+                                <div className='task-btns'>
+                                    <TaskDelete task={task} onDelete={onDelete}/>
+                                    <TaskEdit onIsEdit={editTaskOpen}/>
+                                </div>
                                 <CgArrowsBreakeV  
                                     className="drag-handle"
                                     onMouseDown={(e) => e.stopPropagation()}/>
