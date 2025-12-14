@@ -46,11 +46,11 @@ const TaskItem = ({task ,index, onStatusChange , onDelete , onEdit ,onDragStart 
         
             <div className="task--wrapper" key={task.id}> 
                     {!isEdit ? 
-                        <div 
-                        onDragStart={() => onDragStart(index)}
-                                    onDragOver={onDragOver}
-                                    onDrop={() => onDrop(index)}
-                        draggable>
+                        <div className="task__info--wrapper"
+                            onDragStart={() => onDragStart(index)}
+                            onDragOver={onDragOver}
+                            onDrop={() => onDrop(index)}
+                            draggable>
                             <div className="task--info">
                                 <div className="task-title">{task.title} <span className="greyed sm">#{task.id}</span></div>
                                 <div className="task-desc">{task.description}</div>
@@ -67,7 +67,7 @@ const TaskItem = ({task ,index, onStatusChange , onDelete , onEdit ,onDragStart 
                             </div>    
                         </div>
                         :
-                        <form onSubmit={handleEditForm}>
+                        <form className="task__info--wrapper" onSubmit={handleEditForm}>
                             <div className="task--info-form">
                                 <div className="task-title"><input type="text" id='task-title' value={title}  onChange={e =>setTitle(e.target.value)} required/> <span className="greyed sm">#{task.id}</span></div>
                                 <div className="task-desc"><textarea id='task-description' value={description} onChange={e =>setDescription(e.target.value)} required/></div>

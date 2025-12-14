@@ -36,6 +36,7 @@ const FilterBar = ({tasks , onChange}: TaskFilterProps) => {
       
     return (
         <div className="filter__bar--container">
+        <div className="filter__bar--wrapper">
             <div className="filter__bar">
                 <div className="filter--container">
                     <label className="filter__bar--label">Status</label>
@@ -70,6 +71,7 @@ const FilterBar = ({tasks , onChange}: TaskFilterProps) => {
                     </select>
                 </div>
             </div>
+        </div>
         </div>
     );
 }

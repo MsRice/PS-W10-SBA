@@ -9,7 +9,12 @@ const [description, setDescription] = useState<string>('');
 const [status, setStatus] = useState<TaskStatus>('pending');
 const [priority, setPriority] = useState<'low' | 'medium' | 'high'>('high');
 const [dueDate, setDueDate] = useState<string>('');
+const [taskmodal, setTaskModal] = useState('closed'); 
 
+
+  const toggleTaskModal = () => {
+    setTaskModal((currModal) => (currModal === 'closed' ? 'open' : 'closed'));
+  };
 const handleForm = (event: React.FormEvent<HTMLFormElement>) => {
 event.preventDefault();
 
@@ -20,15 +25,17 @@ const newTask = {
 
 addTask(newTask)
 
-
-
-
-
 }
     return (
-        <div className='add__task--wrapper'>
-            <div className='add__task'> + Task </div>
-            <div className='add__task--container'>
+        <div className={`add__task--wrapper wrapper-${taskmodal} `}>
+            {taskmodal == 'closed'?
+            <button className='add__task' onClick={toggleTaskModal}> + Task </button>
+            :
+            <button className='add__task' onClick={toggleTaskModal}> - Task </button>
+            
+            }
+            <div className={`add__task--container-${taskmodal}`}>
+                <div className='add__form--wrapper'>
 
                 <form className='add__task--form' onSubmit={handleForm}>
                 
@@ -55,9 +62,12 @@ addTask(newTask)
 
                     <label htmlFor="task-dueDate">Due Date:</label>
                     <input type="date" id='task-dueDate' value={dueDate} onChange={e =>setDueDate(e.target.value)} />
+                    <div className='submit--wrapper'>
 
-                    <button type="submit">Submit</button>
+                        <button type="submit">Submit</button>
+                    </div>
                 </form>
+                </div>
             </div>
         </div>
     );

@@ -5,9 +5,11 @@ const TaskList = ({tasks , onStatusChange , onDelete , onEdit ,onDragStart , onD
 
 
     return (
-        <ul className="task__list--wrapper">
-            {tasks.map((el , index) => 
-                <TaskItem 
+        <section id='tasks'>
+
+            <ul className="task__list--wrapper">
+                {tasks.map((el , index) => 
+                    <TaskItem 
                     key={el.id}
                     index ={index}
                     task={el}
@@ -17,8 +19,9 @@ const TaskList = ({tasks , onStatusChange , onDelete , onEdit ,onDragStart , onD
                     onDragStart = {onDragStart}
                     onDragOver = {onDragOver}
                     onDrop = {onDrop}/>
-                    )}
-        </ul>
+                )}
+            </ul>
+        </section>
     );
 }
 

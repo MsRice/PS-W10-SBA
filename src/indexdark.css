@@ -1,0 +1,30 @@
+
+.wrapper-dark .container{
+  background-color: rgb(59, 59, 59);
+}
+
+
+.wrapper-dark .nav__dark-mode--container:hover {
+  color: chartreuse;
+  /* Nav */
+  
+}
+  
+.wrapper-dark .nav__about--container:hover{
+  color: chartreuse;
+
+}
+  
+.wrapper-dark .nav__about-me--container:hover{
+  border: 2px solid chartreuse;
+  border-radius: 4px;
+}
+
+
+.wrapper-dark .about-me{
+  background-color: rgb(36, 35, 35);
+}
+
+.wrapper-dark a{
+  color: chartreuse;
+}
